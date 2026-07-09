@@ -12,7 +12,7 @@ public:
         //    int  s1=abs(maxbest) ;
         //    int  s2=abs(minbest);
             ans = max(ans,max(abs(maxbest),abs(minbest)));
-
+        // KADANE'S ALGO
 
         }
         return ans ;
