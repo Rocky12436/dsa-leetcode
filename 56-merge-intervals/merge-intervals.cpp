@@ -1,3 +1,4 @@
+//merge interval sort techinque
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& a) {
