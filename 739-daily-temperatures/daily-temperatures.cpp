@@ -5,7 +5,7 @@ public:
         vector<int> ans(n);
         stack<int> st;
 
-        // Traverse twice from right to left
+    
         for (int i = n - 1; i >= 0; i--) {
             while (!st.empty() && nums[st.top()] <= nums[i]) {
                 st.pop();
