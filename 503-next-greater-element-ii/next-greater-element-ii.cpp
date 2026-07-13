@@ -1,15 +1,15 @@
 class Solution {
 public:
     vector<int> nextGreaterElements(vector<int>& arr) {
-        int n = arr.size();
+    int n = arr.size();
     vector<int> res(n);
     stack<int> st;
     for(int  i  = n-2;i>=0;i--)
     {
         st.push(arr[i]);
     }
-
-    // Traverse from right to left
+    //STACK
+    
     for(int i = n - 1; i >= 0; i--) {
         
         // Remove all smaller or equal elements
