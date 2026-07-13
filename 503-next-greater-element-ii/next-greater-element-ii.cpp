@@ -9,7 +9,6 @@ public:
         st.push(arr[i]);
     }
     //STACK
-    
     for(int i = n - 1; i >= 0; i--) {
         
         // Remove all smaller or equal elements
