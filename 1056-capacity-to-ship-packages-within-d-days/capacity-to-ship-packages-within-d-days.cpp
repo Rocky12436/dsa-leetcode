@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool possible(vector<int>&a,long long  guess,int days)
+    bool possible(vector<int>&a,int   guess,int days)
     {
         int day=1;
         int load = 0 ;
