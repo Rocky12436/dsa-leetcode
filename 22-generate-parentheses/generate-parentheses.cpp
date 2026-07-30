@@ -24,11 +24,10 @@ public:
         return ;
     }
     vector<string> generateParenthesis(int n) {
-        int close=0;
-        int open=0;
+        
         vector<string>ans;
         string temp ="";
-        fun(open,close,n,temp,ans);
+        fun(0,0,n,temp,ans);
         return ans;
 
     }
