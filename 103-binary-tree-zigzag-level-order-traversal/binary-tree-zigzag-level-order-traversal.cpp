@@ -35,6 +35,9 @@ public:
               
 
         }
+        // also we can use the bool fun instead of this for loop 
+        // if(!lefttoright)
+        // reverse. so the in both case tc is o(N);
          for(int i = 0 ; i<ans.size();i++)
             {
                 if(i%2==1)
