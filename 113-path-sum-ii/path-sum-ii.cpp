@@ -18,14 +18,10 @@ public:
             return ;
         sum = sum + root->val;
         path.push_back(root->val);
-        if(root->left == NULL && root->right  == NULL)
+        if(root->left == NULL && root->right  == NULL && sum == k )
         {
-            if(sum == k )
-            {
-                ans.push_back(path);
-            }
-            path.pop_back();
-            return ;
+            
+            ans.push_back(path);
         }
         fun(root->left,sum,k,path);
         fun(root->right,sum,k,path);
