@@ -1,31 +1,32 @@
 class Solution {
 public:
-    int fun(vector<int>&a , int n , int i , int k , vector<vector<int>>&dp)
-    {
-        if(i == n )
-            return 0 ;
-        if(k ==0 )
-            return 0 ;
-        if(dp[i][k] != -1)
-             return dp[i][k];
-        if(k == 2)
-        {
-            int c1 = fun(a , n , i+1 , k-1,dp) - a[i];
-            int c2 = fun(a , n , i+1, k,dp);
-            return dp[i][k]=max(c1,c2);
-        }
-        else{
-            int c1 = fun(a , n ,i+1, k-1,dp) + a[i];
-            int c2 = fun(a,n,i+1, k,dp);
-            return dp[i][k]=max(c1,c2);
-        }
-        return dp[i][k];
-    }
     int maxProfit(vector<int>& prices) {
         int n = prices.size();
         int k = 2;//transaction 
         vector<vector<int>>dp(n+1,vector<int>(k+1,-1));
-        return fun(prices , n , 0 , k,dp);
+        for(int i = 0 ; i<=k ; i++)
+        {
+            dp[n][i]=0;
+        }
+        for(int j = 0 ; j <=n ;j++)
+        {
+            dp[j][0]=0;
+        }
+        for(int i = n-1 ; i>=0 ; i--)
+        {
+            for(int j = 1; j <=k ; j++)
+            {
+                if(j ==2 )
+                {
+                    dp[i][j] = max(dp[i+1][j-1] - prices[i],dp[i+1][k]);
+                }
+                else
+                {
+                    dp[i][j]=max(dp[i+1][j-1] + prices[i],dp[i+1][j]);
+                }
+            }
+        }
+        return dp[0][k];
 
     }
 };
